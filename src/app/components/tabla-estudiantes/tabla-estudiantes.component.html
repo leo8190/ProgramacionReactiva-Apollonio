@@ -1,0 +1,17 @@
+<h1>Using observable (showing only active students, filtered using map)</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let student of students$ | async">
+            <mat-card class="mat-card-border">
+                <mat-card-header>
+                    <mat-card-title>{{ student.name | uppercase }}</mat-card-title>
+                    <mat-card-subtitle>{{ student.surname }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{ student.email }}</p>
+                    <p>Is Active: {{ student.isActive }}</p>
+                </mat-card-content>                
+            </mat-card>
+        </div>
+    </div>
+</div>
